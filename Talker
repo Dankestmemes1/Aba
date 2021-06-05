@@ -1,0 +1,48 @@
+--//Auto Typer\\--
+
+--//Vars\\--
+local Player = game:GetService("Players").LocalPlayer;
+local Delay = 30
+
+
+
+--//Creating Gui\\--
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Auto Typer", "Ocean")
+
+local Tab = Window:NewTab("Typing")
+
+local type = Tab:NewSection("Typing")
+
+local Tab2 = Window:NewTab("Credits")
+
+local Credits = Tab2:NewSection("Made by White Gravy")
+
+--//Main\\--
+
+type:NewToggle("ToggleText", "Auto Types", function(state)
+        _G.AutoType = state
+
+
+        while _G.AutoType and wait() do
+                                        local args = {
+
+                                             [1] = "Dont Mind Me Just Farming Coins",
+                                             [2] = "All"
+                                              }
+        
+                                         game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+   
+            wait(Delay)
+            end;
+end)
+
+
+--//Credits\\--
+
+-- me
+
+
+
